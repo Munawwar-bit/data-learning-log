@@ -102,3 +102,52 @@ VALUES
 select distinct city from suppliers
 where state = "California"
 order by city desc;
+
+## 3. Show the name for the countries that have a population of at least 200 million. 200 million is 200000000, there are eight zeros.
+
+Answer: select name from world
+where population >= 200000000;
+
+##4.
+Give the name and the per capita GDP for those countries with a population of at least 200 million.
+
+HELP:How to calculate per capita GDP
+per capita GDP is the GDP divided by the population GDP/population
+
+Answer: select name, GDP/population AS 'per capita GDP' from world
+where population > 200000000;
+
+##5 AS
+
+select name, GDP/population AS 'per capita GDP' from world
+where population > 200000000; 
+
+##6 in millions
+
+select name, population/1000000 AS 'population in millions' from world
+where continent = 'South America';
+
+##6 IN
+
+select name, population from world
+where name IN ('France','Germany', 'Italy');
+
+##7 LIKE
+
+select name from world
+where name like '%United%';
+
+##8 OR
+
+select name, population, area from world
+where area > 3000000 OR population > 250000000;
+
+##9 XOR
+
+select name, population, area from world
+where area > 3000000 XOR population > 250000000;
+
+##10 Rounding
+
+select name, round(population/1000000, 2), round(gdp/1000000000, 2) from world
+where continent = 'South America';
