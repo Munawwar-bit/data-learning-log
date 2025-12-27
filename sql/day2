@@ -85,3 +85,31 @@ where city like ('%would%');
 8.3 select salary(price, 1) from employees;
 8.10 select round(temperature_celsius, -1) from city;
 
+### Excercises on the combination of above logics
+1.
+select first_name, last_name, city, points from customers
+where state IN ('FL', 'TX', 'CA')
+order by points desc
+limit 5;
+
+2.
+select distinct city from customers
+where state IN ('FL', 'TX')
+order by city asc;
+
+3.
+select name, unit_price from products
+where name like ('%Broom%') OR name like ('%Sauce%')
+order by unit_price desc;
+
+4.
+select name, quantity_in_stock, unit_price, round(quantity_in_stock * unit_price, 2) AS total_stock_value from products
+where quantity_in_stock > 20
+order by total_stock_value desc;
+
+5.
+select order_id, customer_id, order_date, status from orders
+where (status = 1 XOR shipper_id IS NOT NULL)
+AND YEAR(order_date) = 2018
+order by order_date asc
+limit 3;
