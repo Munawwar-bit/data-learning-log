@@ -1,0 +1,87 @@
+# exercises on SELECT, WHERE, ORDER BY, DISTINCT, IN, LIKE, OR / XOR, ROUND
+
+1.1 select * from customers;
+1.2 select first_name, last_name from employees;
+1.3 select * from products;
+1.4 select name, population from world; 
+1.5 select * from orders; 
+1.6 select name, price from products; 
+1.7 select employee_number from employee;
+1.8 SELECT quantity_in_stock FROM products
+order by quantity_in_stock desc
+limit 10;
+1.9 select * from suppliers;
+1.10 select city, state from suppliers;
+
+2.1 select * from employees
+where salary > 60000;
+2.2 select customers from world
+where city = 'London';
+2.3 select * from products
+where price < 500;
+2.4 select * from Orders
+where year = 2021;
+2.5 select * from customers;
+where last_name = 'Smith';
+2.6 select * from employees
+where dept_id = 500;
+2.7 select * from countries
+where GDP > 1000000000000;
+2.8 select * from students
+where grade = 'A';
+2.9 select * from products
+where quantity < 50;
+2.10 select * from cars
+where mileage >= 15;
+
+3.1 select * from employees
+order by salary aesc;
+3.2 select * from customers
+order by last_name desc;
+3.3 select * from suppliers
+order by city desc;
+3.4 select * from countries
+order by population desc;
+3.5 select * from orders
+order by order_date aesc;
+3.6 select * from products
+order by price desc;
+3.7 select * from employees
+order by first_name aesc;
+3.8 select * from students
+order by marks desc;
+3.9 select * from books
+order by published_year aesc;
+3.10 select * from customers
+order by country, city;
+
+4.1 select distinct cities from customers;
+4.4 select distinct continents from world;
+4.6 select distinct manufacturers from products;
+4.8 select distinct years from sales;
+4.10 select distinct job_titles from employees;
+
+5.1 select * from customers
+where country in ('India', 'USA', 'UK'); 
+5.2 select * from products
+where category in ('Electonics', 'Furniture'); 
+5.9 select * from employees
+where employee_number in (1001,1002,1004); 
+5.10 select * from books
+where genre in ('Sci-Fi', 'Fantasy'); 
+
+6.1 select * from customers
+where first_name like ('j%');
+6.2 select * from customers
+where last_name like ('%son');
+6.3 select * from country
+where city like ('%would%');
+6.4 where email like ('%gmail.com');
+6.5 where product like ('%Pro%');
+6.10 where phone_number like (98%)
+
+8.1 select round(populations,2) from countries;
+8.2 select round(price) from products;
+8.3 select salary(price, 1) from employees;
+8.10 select round(temperature_celsius, -1) from city;
+
